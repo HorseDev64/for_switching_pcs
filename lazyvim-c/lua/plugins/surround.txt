@@ -1,0 +1,18 @@
+--[[
+return {
+  {
+    "echasnovski/mini.surround",
+    opts = {
+      mappings = {
+        add = "sj",      -- surround
+        delete = "sjd",  -- delete surround
+        replace = "sjc", -- change surround
+        find = "sjf",
+        find_left = "sjf",
+        highlight = "sjh",
+        update_n_lines = "sjn",
+      },
+    },
+  },
+}
+--]]
