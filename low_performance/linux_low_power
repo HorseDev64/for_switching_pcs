@@ -1,0 +1,14 @@
+for low performance devices, your setup:
+
+  i3
+  pacman -S i3
+
+  feh (background)
+  pacman -S feh
+
+
+  tint2
+  pacman -S tint2
+
+
+

@@ -1,0 +1,18 @@
+#in xmodmap veryfing code with "xev"
+xmodmap -e "keycode 47 = semicolon colon semicolon colon"
+xmodmap -e "keycode 34 = slash question minus underscore"
+
+
+# using keyd
+sudo nano /etc/keyd/default.conf
+
+[ids]
+*
+
+[main]
+
+# ====== Caps <-> Ctrl ======
+capslock = leftcontrol
+leftcontrol = capslock
+; = shift+,
+
