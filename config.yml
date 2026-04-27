@@ -1,0 +1,43 @@
+modmap:
+  - name: Swap CapsLock and Control
+    remap:
+      CapsLock: Control_L
+      Control_L: CapsLock
+
+
+keymap:
+  - name: Global Ctrl+J to Enter except in terminals
+    application:
+      not: [Alacritty, kitty, gnome-terminal, st-256color]
+    remap:
+      C-j: enter
+      #ctrfl a inicio (home)
+      C-a: home
+      # Ctrl + d = Borrar adelante (Delete)
+      C-d: delete
+      # Ctrl + u = Guion bajo (_)
+      C-u: S-minus
+      #backspace
+      C-h: backspace
+      #ctrl backspace
+      C-w: C-backspace
+
+  - name: Custom Symbols with Control
+    remap:
+      # 1. Ctrl + ñ (que ahora es ;) sea :
+      C-semicolon: S-semicolon
+      # 2. Ctrl + '  sea - "?"
+      C-minus: S-minus
+
+  - name: Ctrl + Numbers to Symbols
+    remap:
+      C-1: S-1 # !
+      C-2: S-2 # " o @
+      C-3: S-3 # # o ·
+      C-4: S-4 # $
+      C-5: S-5 # %
+      C-6: S-6 # &
+      C-7: S-7 # /
+      C-8: S-8 # (
+      C-9: S-9 # )
+      C-0: S-0 # =

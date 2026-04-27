@@ -2,17 +2,19 @@
 xmodmap -e "keycode 47 = semicolon colon semicolon colon"
 xmodmap -e "keycode 34 = slash question minus underscore"
 
+install xremap-x11-bin
 
 # using keyd
-sudo nano /etc/keyd/default.conf
+#deprecated
+#sudo nano /etc/keyd/default.conf
 
-[ids]
-*
+#[ids]
+#*
 
-[main]
+#[main]
 
 # ====== Caps <-> Ctrl ======
-capslock = leftcontrol
-leftcontrol = capslock
-; = shift+,
+#capslock = leftcontrol
+#leftcontrol = capslock
+#; = shift+,
 
