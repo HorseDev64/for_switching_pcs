@@ -21,6 +21,8 @@ keymap:
       C-h: backspace
       #ctrl backspace
       C-w: C-backspace
+      #tab
+      C-i: Tab
 
   - name: fuckyou
     remap: 
