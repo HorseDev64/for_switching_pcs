@@ -3,7 +3,9 @@ modmap:
     remap:
       CapsLock: Control_L
       Control_L: CapsLock
-
+    remap:
+      Tab: Super_L
+      Super_L: Tab
 
 keymap:
   - name: Global Ctrl+J to Enter except in terminals
@@ -15,17 +17,21 @@ keymap:
       C-a: home
       # Ctrl + d = Borrar adelante (Delete)
       C-d: delete
-      # Ctrl + u = Guion bajo (_)
-      C-u: S-minus
       #backspace
       C-h: backspace
       #ctrl backspace
       C-w: C-backspace
 
+  - name: fuckyou
+    remap: 
+      KEY_SEMICOLON: S-KEY_COMMA
+      C-KEY_SEMICOLON: S-KEY_DOT
+      KEY_LEFTBRACE: KEY_SLASH
+      C-KEY_LEFTBRACE: S-KEY_APOSTROPHE
+
   - name: Custom Symbols with Control
     remap:
-      # 1. Ctrl + ñ (que ahora es ;) sea :
-      C-semicolon: S-semicolon
+      C-u: S-slash
       # 2. Ctrl + '  sea - "?"
       C-minus: S-minus
 
@@ -41,3 +47,4 @@ keymap:
       C-8: S-8 # (
       C-9: S-9 # )
       C-0: S-0 # =
+      C-u: S-slash

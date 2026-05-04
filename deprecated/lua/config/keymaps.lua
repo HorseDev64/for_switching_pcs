@@ -1,7 +1,8 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
--- -- -- Salir de Insert con jk-- ~/.config/nvim/lua/config/keymaps.lua
+--- -- -- Salir de Insert con jk-- ~/.config/nvim/lua/config/keymaps.lua
+---
+---
 vim.keymap.set("x", "S", function()
   vim.cmd("echo 'Surround Visual Mode'")
 end)
@@ -21,11 +22,10 @@ vim.g.VM_maps = {
 }
 
 
-
-vim.keymap.set("n", "<C-h>", "<C-w>h", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-j>", "<C-w>j", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-k>", "<C-w>k", { noremap = true, silent = true })
+vim.keymap.set({"n", "t", "v"}, "<C-h>", "<C-w>h", { noremap = true, silent = true })
+vim.keymap.set({"n", "t", "v"}, "<C-l>", "<C-w>l", { noremap = true, silent = true })
+vim.keymap.set({"n", "t", "v"}, "<C-j>", "<C-w>k", { noremap = true, silent = true })
+vim.keymap.set({"n", "t", "v"}, "<C-k>", "<C-w>j", { noremap = true, silent = true })
 -- Salir de insert con jk
 vim.keymap.set("i", "jk", "<Esc>", { desc = "Salir de insert con jk" })
 vim.keymap.set("n", "_", "<C-u>", { desc = "moverme pa arriba" })
@@ -43,6 +43,7 @@ vim.keymap.set("x", "sj", "<Plug>(surround-visual)", {})
 vim.keymap.set("v", "j", "k", { desc = "Mover arriba (visual)" })
 vim.keymap.set("v", "k", "j", { desc = "Mover abajo (visual)" })
 vim.keymap.set("v", ";", "$", { desc = "ir al final de la linea" })
+
 --/vim.keymap.set("n", "sj", "<Plug>(surround-operator)", {})
 
 --s sCambiar de buffers (equivalentbje a H / L)
@@ -68,3 +69,12 @@ map("n", "<leader>as", "<leader>ft", { desc = "Terminal (Root Dir)", remap = tru
 
 -- Remapea <leader>ao a <leader>fT
 map("n", "<leader>ao", "<leader>fT", { desc = "Terminal (cwd)", remap = true })
+
+
+vim.keymap.set("n", "<leader>i", function()
+  local file = vim.fn.expand("%:p")
+  vim.fn.jobstart(
+    { "env", "WAYLAND_DISPLAY=" .. os.getenv("WAYLAND_DISPLAY"), "imv", file },
+    { detach = true }
+  )
+end)
